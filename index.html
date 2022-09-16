@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Media Queries</title>
+</head>
+<style>
+.calculator-container{
+    background-color: #606060;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    height: 400px;
+    width: 350px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow:1px 3px 7px 4px rgb(37, 35, 35) ;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn{
+    background-color: white;
+    width: 70px;
+    margin-top: 20px;
+    margin-right: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 0px 4px 5px rgb(61, 51, 51);
+    transition: 0.5s;
+}
+.input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.input-screen{
+    height: 60px;
+    width: 330px;
+    font-size: 50px;
+    border-radius: 10px;
+    border: 5px double gray;
+    background-color: #94b8b8;
+}
+.bg-o{
+    background-color: orange;
+    color: white;
+    border: 1px solid white;
+}
+.brand{
+    color: white;
+    font-family: cursive
+}
+</style>
+<body>
+<div class="calculator-container">
+    <span class="brand">CASIO</span>
+    <div class="input">
+        <input type="text" class="input-screen"/>
+    </div>
+<div class="row">
+    <button class="btn">7</button>
+    <button class="btn">8</button>
+    <button class="btn">9</button>
+    <button class="btn">÷</button>
+</div>
+<div class="row">
+    <button class="btn">4</button>
+    <button class="btn">5</button>
+    <button class="btn">6</button>
+    <button class="btn">x</button>
+</div>
+<div class="row">
+    <button class="btn">1</button>
+    <button class="btn">2</button>
+    <button class="btn">3</button>
+    <button class="btn">-</button>
+</div>
+<div class="row">
+    <button class="btn">0</button>
+    <button class="btn">.</button>
+    <button class="btn">+</button>
+    <button class="btn bg-o">=</button>
+</div>
+</div>
+</body>
+</html>
