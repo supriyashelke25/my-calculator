@@ -1,95 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Media Queries</title>
-</head>
-<style>
-.calculator-container{
-    background-color: #606060;
-    display: block;
-    margin: auto;
-    margin-top: 20px;
-    padding: 20px;
-    height: 400px;
-    width: 350px;
-    border: 2px solid black;
-    border-radius: 20px;
-    box-shadow:1px 3px 7px 4px rgb(37, 35, 35) ;
-}
-.row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.btn{
-    background-color: white;
-    width: 70px;
-    margin-top: 20px;
-    margin-right: 5px;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    border: 1px solid white;
-    border-radius: 10px;
-}
 
-.btn:hover{
-    cursor: pointer;
-    box-shadow: 0px 4px 5px rgb(61, 51, 51);
-    transition: 0.5s;
-}
-.input{
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.input-screen{
-    height: 60px;
-    width: 330px;
-    font-size: 50px;
-    border-radius: 10px;
-    border: 5px double gray;
-    background-color: #94b8b8;
-}
-.bg-o{
-    background-color: orange;
-    color: white;
-    border: 1px solid white;
-}
-.brand{
-    color: white;
-    font-family: cursive
-}
-</style>
+<head>
+    <title>Calculator</title>
+
+    <script>
+        function pressButton(buttonValue) {
+            let calText = document.querySelector(".input-screen").value + buttonValue + "";
+            document.querySelector(".input-screen").value = calText;
+        }
+        function calculate() {
+            let calText = document.querySelector(".input-screen").value;
+            document.querySelector(".input-screen").value = eval(calText);
+        }
+        function clearScreen() {
+            document.querySelector(".input-screen").value = "";
+        }
+    </script>
+    <style>
+        .calculator-container {
+            background-color: #606060;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            padding: 20px;
+            height: 400px;
+            width: 340px;
+            border: 2px solid black;
+            border-radius: 20px;
+            box-shadow: 1px 3px 7px 4px rgb(37, 35, 35);
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .btn {
+            background-color: white;
+            width: 70px;
+            margin-top: 20px;
+            margin-right: 5px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            border: 1px solid white;
+            border-radius: 10px;
+        }
+
+        .btn:hover {
+            cursor: pointer;
+            box-shadow: 0px 4px 5px rgb(61, 51, 51);
+            transition: 0.5s;
+        }
+
+        .input {
+            margin-top: 20px;
+        }
+
+        .input-screen {
+            height: 60px;
+            width: 325px;
+            font-size: 50px;
+            border-radius: 10px;
+            border: 5px double gray;
+            background-color: #94b8b8;
+        }
+
+        .bg-o {
+            background-color: #ff751a;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .bg-g{
+            background-color: #00b300;
+        }
+
+        .bg-r{
+            background-color:#ff0000;
+        }
+
+        .bg-p{
+            background-color:#ff3399;
+        }
+
+        .brand {
+            color: white;
+            font-family: cursive
+        }
+    </style>
+</head>
+
 <body>
-<div class="calculator-container">
-    <span class="brand">CASIO</span>
-    <div class="input">
-        <input type="text" class="input-screen"/>
+    <div class="calculator-container">
+        <span class="brand">CASIO</span>
+        <div class="input">
+            <input type="text" class="input-screen" />
+        </div>
+        <div class="row">
+            <button class="btn bg-g" onclick="onScreen" style="font-size:22px;">ON</button>
+            <button class="btn bg-r" onclick="offScreen" style="font-size:22px;">OFF</button>
+            <button class="btn bg-p" onclick="clearScreen()" style="font-size:22px;">CE</button>
+            <button class="btn" onclick="sqroot()" style="font-size:22px;padding: 5px;">√</button>
+        </div>
+        <div class="row">
+            <button class="btn" onclick=" pressButton(7)">7</button>
+            <button class="btn" onclick=" pressButton(8)">8</button>
+            <button class="btn" onclick=" pressButton(9)">9</button>
+            <button class="btn" onclick=" pressButton('/')">÷</button>
+        </div>
+        <div class="row">
+            <button class="btn" onclick=" pressButton(4)">4</button>
+            <button class="btn" onclick=" pressButton(5)">5</button>
+            <button class="btn" onclick=" pressButton(6)">6</button>
+            <button class="btn" onclick=" pressButton('*')">x</button>
+        </div>
+        <div class="row">
+            <button class="btn" onclick=" pressButton(1)">1</button>
+            <button class="btn" onclick=" pressButton(2)">2</button>
+            <button class="btn" onclick=" pressButton(3)">3</button>
+            <button class="btn" onclick=" pressButton('-')">-</button>
+        </div>
+        <div class="row">
+            <button class="btn" onclick=" pressButton(0)">0</button>
+            <button class="btn" onclick=" pressButton('.')">.</button>
+            <button class="btn" onclick=" pressButton('+')">+</button>
+            <button class="btn bg-o" onclick="calculate()">=</button>
+        </div>
     </div>
-<div class="row">
-    <button class="btn">7</button>
-    <button class="btn">8</button>
-    <button class="btn">9</button>
-    <button class="btn">÷</button>
-</div>
-<div class="row">
-    <button class="btn">4</button>
-    <button class="btn">5</button>
-    <button class="btn">6</button>
-    <button class="btn">x</button>
-</div>
-<div class="row">
-    <button class="btn">1</button>
-    <button class="btn">2</button>
-    <button class="btn">3</button>
-    <button class="btn">-</button>
-</div>
-<div class="row">
-    <button class="btn">0</button>
-    <button class="btn">.</button>
-    <button class="btn">+</button>
-    <button class="btn bg-o">=</button>
-</div>
-</div>
 </body>
+
 </html>
